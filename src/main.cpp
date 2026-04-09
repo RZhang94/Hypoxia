@@ -19,9 +19,10 @@ const int ACCEL_STEPS   = 60;   // Number of steps used for acceleration AND dec
                                 // Good starting value for most NEMA17/23 motors: 30-60
 const int START_DELAY   = 3000;// Starting (slowest) delay in microseconds
                                 // Higher value = slower start (more torque at beginning)
+const int CYCLES_BEFORE_SLEEP = 5; // Number of complete oxygen cycles before putting the motor to sleep (optional power-saving feature)
 // =====================================================
 
-
+bool buttonPressed = false;
 
 // moveSteps with linear acceleration ramp-up + deceleration ramp-down
 void moveSteps(bool forward, int steps) {
@@ -89,12 +90,18 @@ void setup() {
 void loop() {
   // Continuously check the button
   if (digitalRead(BUTTON_PIN) == LOW) {  // Button pressed
-    oxygen_cycle();
-    
+    buttonPressed = true;
     // Simple debounce + wait for button release (prevents multiple triggers while holding)
     delay(200);
     while (digitalRead(BUTTON_PIN) == LOW) {
       delay(10);
     }
   } // Run the cycle continuously without button control
+
+  if (buttonPressed) {
+    for (int i = 0; i < CYCLES_BEFORE_SLEEP; i++) {
+      oxygen_cycle();
+    }
+    buttonPressed = false;
+  }
 }
