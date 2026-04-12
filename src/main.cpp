@@ -12,7 +12,7 @@
 const int STEPNO = 560;      // Number of steps to move in each direction (200 = 1 full revolution on most 1.8° motors)
 const int DELAY_NORM  = 65;        // Delay in seconds at Normoxia
 const int DELAY_HYPOXIA = 90;      // Delay in seconds at Hypoxia
-const int PULSE_DELAY   = 1000; // Target (fastest) delay in microseconds per step at full speed
+const int PULSE_DELAY   = 1200; // Target (fastest) delay in microseconds per step at full speed
                                 // (smaller = faster, larger = more torque at top speed)
 const int ACCEL_STEPS   = 60;   // Number of steps used for acceleration AND deceleration ramp
                                 // (higher = gentler/smoother ramp, but takes longer to reach speed)
