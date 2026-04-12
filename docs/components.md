@@ -1,6 +1,6 @@
 For RH
 
-## Key Components
+# Key Components
 - Arduino Uno/Nano: Contains the logic that drives the stepper motor. 
 - DRV8825 Stepper Motor Driver: Connects the motor, power supply, input from arduino, outputs stepper motor commands. Set to 2.3 A, using the pot screw. 
 - NEMA17 Stepper motor: Spins
@@ -8,27 +8,35 @@ For RH
 - Button: Activates the hpoxia timing
 - Electroylitc Capacitor: smooths out the power for the stepper motor.
 
-## Pinout Diagram
+# Pinout Diagram
 Refer to the diagrams:
-# Arduino <=> DRV8825
+## Arduino <=> DRV8825
 Pin2 = DIR
+
 Pin3 = STEP
+
 GND1 = GND+M2+M1+M0+EN
+
 3.3V = RST+SLP (parallel)
 
-# Arduino <=> Button
+## Arduino <=> Button
 PIN4 = Side1
+
 GND2 = Side2
 
-# DRV8825 <=> Stepper
+## DRV8825 <=> Stepper
 Plug in the JST 1 way, if you don't like the initial direction you can rotate it 180.
 
-# DRV8825 <=> 12V power supply
+## DRV8825 <=> 12V power supply
 VMOT = +
+
 GND = -
 
-## Physical Connections/Tips
+# Physical Connections/Tips
 During assembly, put the input/retaining ring/output together first. M5 hardware
+
 NEMA17 bolts into the square pattern, M3 hardware
+
 Put in the gear train from the stepper motor side -> Input ring.
+
 Should probably use grease for the whole assembly.
