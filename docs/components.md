@@ -11,9 +11,9 @@ For RH
 # Pinout Diagram
 Refer to the diagrams:
 ## Arduino <=> DRV8825
-Pin2 = DIR
+Pin2 = STEP
 
-Pin3 = STEP
+Pin3 = DIR
 
 GND1 = GND+M2+M1+M0+EN
 
