@@ -9,7 +9,7 @@
 #define BUTTON_PIN  4
 
 // ================== CONFIGURE THESE ==================
-const uint16_t STEPNO = 560;      // Number of steps to move in each direction (200 = 1 full revolution on most 1.8° motors)
+const uint16_t STEPNO = 920;      // Number of steps to move in each direction (200 = 1 full revolution on most 1.8° motors)
 const uint16_t DELAY_NORM  = 65;        // Delay in seconds at Normoxia
 const uint16_t DELAY_HYPOXIA = 90;      // Delay in seconds at Hypoxia
 const uint16_t PULSE_DELAY   = 1200; // Target (fastest) delay in microseconds per step at full speed
